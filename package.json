@@ -5,6 +5,13 @@
   "main": "yo",
   "author": "Frank Adler",
   "license": "MIT",
+  "keywords": [
+    "time", "tracking", "timetracking", "track", "work", "timer"
+  ],
+  "bugs": {
+    "url": "https://github.com/ice8lue/yo.tt/issues",
+    "email": "hi@adfr.io"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice8lue/yo.tt"
