@@ -1,6 +1,6 @@
 {
   "name": "yo.tt",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A (very) simple command line time tracker.",
   "main": "yo",
   "author": "Frank Adler",
