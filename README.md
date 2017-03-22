@@ -9,7 +9,7 @@ It's as simple as that. But wait, there's more!
 
 Want to get *yo* onto your machine? Get it from npm!
 
-```npm install -g Yo```
+```npm install -g yo.tt```
 
 ## Usage
 
