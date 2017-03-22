@@ -3,15 +3,10 @@ const app = require('commander'),
 			packageJSON = require('./package.json'),
 			TAFFY = require('node-taffydb').TAFFY,
 			jsonfile = require('jsonfile'),
-			moment = require('moment'),
-			timediff = require('timediff');
+			moment = require('moment');
 
 // initialize app meta info
-app
-	.option('-s, --start [time]', 'adjust current tracks starting time')
-	.option('-e, --end [time]', 'adjust current tracks ending time')
-	.option('-t, --task [taskname]', 'current task')
-	.parse(process.argv);
+app.parse(process.argv);
 
 const getDate = (d) => {
 	d = d && d.replace(' ', 'T');
@@ -41,7 +36,7 @@ if (last && last.end || !last) {
 
 	db.insert(track);
 
-	console.log('Ok Jim, you just checked in!');
+	console.log('Yo, tracking started!');
 
 } else {
 	// end track
@@ -52,22 +47,11 @@ if (last && last.end || !last) {
 
 	if (!app.task || app.end) {
 		track.end = getDate(app.end);
-		track.diff = timediff(track.start || last.start, track.end, 'YDHms');		
-	}
-
-	let after = '';
-
-	if (track.diff) {
-		after  = track.diff.days ? track.diff.days + ' days' : '';
-		after += track.diff.hours ? (after ? ', ' : '') + track.diff.hours + ' hours' : '';
-		after += track.diff.minutes ? (after ? ' and ' : '') + track.diff.minutes + ' minutes' : '';
-
-		delete track.diff.milliseconds;
 	}
 
 	db(last.___id).update(track)
 
-	console.log('Done, huh?' + ( after ? ' After just ' + after + '... That\'s what you call work?' : '' ));
+	console.log('Done, huh? Yo!');
 
 }
 

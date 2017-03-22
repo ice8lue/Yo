@@ -1,6 +1,6 @@
 {
   "name": "yo",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A (very) simple time tracker.",
   "main": "yo",
   "author": "Frank Adler",
@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "chalk": "^1.1.3",
+    "cli-table": "^0.3.1",
     "commander": "^2.9.0",
     "jsonfile": "^2.4.0",
     "moment": "^2.18.0",
-    "node-taffydb": "^0.2.0",
-    "timediff": "^1.1.1"
+    "node-taffydb": "^0.2.0"
   }
 }

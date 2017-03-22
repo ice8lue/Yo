@@ -6,9 +6,6 @@ const app = require('commander'),
 app
 	.version(packageJSON.version)
 	.description(packageJSON.description)
-	.option('-s, --start [time]', 'adjust current tracks starting [time]', 'now', Date.parse)
-	.option('-e, --end [time]', 'adjust current tracks ending [time]', 'now', Date.parse)
-	.option('-t, --task [taskname]', 'current task')
 	.command('track', 'starts/stops current track, allows time and task adjustments', { isDefault: true })
 	.command('list', 'lists all entries')
 	.parse(process.argv);
