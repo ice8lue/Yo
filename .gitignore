@@ -1,2 +1,17 @@
-node-modules
+# Intellij
+*.iml
+.idea
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Mac
+.DS_Store
+
+# Development files
+node_modules
 yarn.lock
+
+# Data files
+data/entries.json
