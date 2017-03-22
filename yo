@@ -1,11 +1,34 @@
 #!/usr/bin/env node
-const app = require('commander'),
+'use strict';
+
+const yo = require('caporal'),
 			packageJSON = require('./package.json');
 
-app
+const commands = require('./lib/commands.js');
+
+yo
 	.version(packageJSON.version)
 	.description(packageJSON.description)
-	.command('track', 'starts/stops current track, allows time and task adjustments', { isDefault: true })
+
+	// default track/untrack command
+	.action(commands.track)
+
+	// edit command
+	.command('edit', 'allows time and task adjustments')
+	.alias('e')
+	.option('-s, --start [time]', 'adjust current tracks starting time', /^\d\d:\d\d$/)
+	.option('-e, --end [time]', 'adjust current tracks ending time', /^\d\d:\d\d$/)
+	.option('-t, --task [taskname]', 'current task', yo.String)
+	.action(commands.edit)
+
+	// list command
 	.command('list', 'lists all entries')
+	.alias('l')
+	.action(commands.list)
+
+	// clear command
 	.command('clear', 'removes all entries')
-	.parse(process.argv);
+	.alias('c')
+	.action(commands.clear);
+
+yo.parse(process.argv);
