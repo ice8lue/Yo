@@ -1,13 +1,13 @@
 {
   "name": "yo.tt",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A (very) simple command line time tracker.",
   "main": "yo",
   "author": "Frank Adler",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/ice8lue/Yo.git"
+    "type": "git",
+    "url": "https://github.com/ice8lue/Yo.git"
   },
   "bin": {
     "yo": "yo"
