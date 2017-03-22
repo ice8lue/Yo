@@ -1,4 +1,4 @@
-# Yo
+# yo.tt (yo time tracking)
 
 *A (very) simple command line time tracker.*
 

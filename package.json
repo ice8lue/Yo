@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ice8lue/Yo.git"
+    "url": "https://github.com/ice8lue/yo.tt"
   },
   "bin": {
     "yo": "yo"
