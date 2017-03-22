@@ -5,6 +5,10 @@
   "main": "yo",
   "author": "Frank Adler",
   "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ice8lue/Yo.git"
+  },
   "bin": {
     "yo": "yo"
   },
