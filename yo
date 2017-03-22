@@ -2,10 +2,10 @@
 const app = require('commander'),
 			packageJSON = require('./package.json');
 
-// initialize app meta info
 app
 	.version(packageJSON.version)
 	.description(packageJSON.description)
 	.command('track', 'starts/stops current track, allows time and task adjustments', { isDefault: true })
 	.command('list', 'lists all entries')
+	.command('clear', 'removes all entries')
 	.parse(process.argv);

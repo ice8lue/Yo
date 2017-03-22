@@ -3,10 +3,14 @@ const app = require('commander'),
 			packageJSON = require('./package.json'),
 			TAFFY = require('node-taffydb').TAFFY,
 			jsonfile = require('jsonfile'),
-			moment = require('moment');
+			moment = require('moment'),
+			fs = require('fs');
 
-// initialize app meta info
-app.parse(process.argv);
+app
+	.option('-s, --start [time]', 'adjust current tracks starting time')
+	.option('-e, --end [time]', 'adjust current tracks ending time')
+	.option('-t, --task [taskname]', 'current task')
+	.parse(process.argv);
 
 const getDate = (d) => {
 	d = d && d.replace(' ', 'T');
@@ -14,9 +18,11 @@ const getDate = (d) => {
 	return (d.isValid() ? d : moment()).format();
 };
 
-const datafile = __dirname + '/data/entries.json';
+const datafile = __dirname + '/yo.json';
+const data = fs.existsSync(datafile) ? require(datafile) : {
+	tracks: []
+};
 
-let data = require(datafile);
 const db = TAFFY(data && data.tracks || []);
 
 // get last track
